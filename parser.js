@@ -195,15 +195,20 @@ var value = function () {
     // ch is at opening curley brace, create & return the object
     var object = {};
     if(ch !== '{') error('object should start with {');
-    if(next() === '}') {
+    next();
+    skipWhiteChar();
+    if(ch === '}') {
       next();
       return object; // empty object
     }
     do {
       var key = string(); // get key
+      skipWhiteChar();
       if(ch !== ':') error('object property expecting ":"');
       next();
+      skipWhiteChar();
       object[key] = value(); // create property with whatever value is, perhaps another object/array
+      skipWhiteChar();
       if(ch === '}') {  // object end reached
         next();
         return object;
@@ -214,8 +219,17 @@ var value = function () {
   };
 
 
+  var skipWhiteChar = function(){
+    while(ch === '\t' || ch === '\n' || ch === '\r' || ch === '\n\r' || ch === ' '){
+      next();
+    }
+  }
+
   function parseJSON(jsonText) {
-    json = jsonText;
+
+    
+    console.log(jsonText.trim());
+    json = jsonText.trim();
     /*
     insert code for:
     at, ch, next, error, value, nully, bool, number, escapes, string, array, object
