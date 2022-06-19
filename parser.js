@@ -172,16 +172,20 @@ var value = function () {
 
 
   var array = function() {
-    // ch is at opening bracket, create & return the array
+    // ch is at opening bracket, create & return the array [   "",   ]
     var array = [];
     if(ch !== '[') error('array should start with [');
-    if(next() === ']') {
+    next();
+    skipWhiteChar();
+    if( ch=== ']') {
       next()
       return array; // empty array
     }
     do {
+      skipWhiteChar();
       array.push(value());
       //next();
+      skipWhiteChar();
       if(ch === ']') { // array end reached
         next();
         return array;
@@ -202,6 +206,7 @@ var value = function () {
       return object; // empty object
     }
     do {
+      skipWhiteChar();
       var key = string(); // get key
       skipWhiteChar();
       if(ch !== ':') error('object property expecting ":"');
@@ -239,5 +244,3 @@ var value = function () {
     ch = json.charAt(at);
     return value();
   }
-
-  
