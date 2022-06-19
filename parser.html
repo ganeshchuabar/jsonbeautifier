@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+        <script src="parser.js"></script>
+        <script src="home.js"></script>
+        <link rel="stylesheet" href="parser.css"></link>
+    </head>
+<body>
+
+
+<div class="splitter">
+    <div id="first">
+        <textarea id="plaintext"></textarea>
+    </div>
+    <div id="separator" ></div>
+    <div id="second">
+
+    </div>
+</div>
+<div>
+    <button onclick="beautify()"> Beautify</button>
+</div>
+<script type="text/javascript">
+    dragElement( document.getElementById("separator"), "H" );
+</script>
+</body>
+</html> 
+
