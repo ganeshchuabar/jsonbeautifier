@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
         <script src="parser.js"></script>
         <script src="home.js"></script>
@@ -8,9 +9,18 @@
     </head>
 <body>
 
-    <div id="actioncontainer">
-        <button class="button-14" onclick="beautify()"> Beautify</button>
+<div id="header">
+    <div><button class="button-14 marT3" onclick="beautify()"> Beautify</button>
+        <button class="button-14 marT10 marL3" id="cleart" onclick='window.clear("textarea")'> Clear</button>
+        <button class="button-14 marT10 floR marR3" onclick="window.clear('formatpane')"> Clear</button>
+        <button class="button-14 marT10 floR marR3" onclick="window.format('textarea')">Format</button>
+        <button class="button-14 marT10 floR marR3" onclick="window.unformat('textarea')">Un-Format</button>
+        <button class="button-14 marT10 floR marR3" onclick="window.copy('formatpane')"> Copy</button>
     </div>
+        
+</div>
+    
+</div>
 <div class="splitter">
     <div id="first">
         <textarea id="plaintext"></textarea>
@@ -20,7 +30,9 @@
 
     </div>
 </div>
-
+<div id="footer" style="display:none;">
+    <button class="button-14" onclick="beautify()"> Beautify</button>
+</div>
 <script type="text/javascript">
     dragElement( document.getElementById("separator"), "H" );
 </script>

@@ -47,4 +47,35 @@ function beautify(){
     var json = parseJSON(document.getElementById("plaintext").value);
     var str = JSON.stringify(json,undefined,2);
     document.getElementById("second").innerHTML = "<pre>"+str+"</str>";
-}
+};
+function clear(pane){
+    if( pane == "textarea"){
+        $("#plaintext").val("");
+    }else{
+        $("#second").html("");
+    }
+};
+function format(){
+    $("#second").html("");
+    //var json = parseJSON($("#plaintext").val());
+    var str = JSON.stringify(jsonObject,undefined,2);
+    $("#second").html("<pre>"+str+"</str>");
+};
+function unformat(){
+    $("#second").html("");
+    //var json = parseJSON($("#plaintext").val());
+    var str = JSON.stringify(jsonObject);
+    $("#second").html("<pre>"+str+"</str>");
+};
+function copy() {
+    /* Get the text field */
+    var copyText = $("#second pre");
+  
+    /* Select the text field */
+    copyText.select();
+    //copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+     /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.html());
+  
+  }
