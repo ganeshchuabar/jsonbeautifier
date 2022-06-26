@@ -5,6 +5,7 @@ html, body {
     width: 100%; 
     height: 100%;
     overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
 }
 .splitter {
     width: 100%;
@@ -106,6 +107,24 @@ html, body {
   border-color: #e77600;
   box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;
   outline: 0;
+}
+
+#second li,ul,ol{
+  list-style: none;
+  padding-left: 10px;
+  margin-bottom:0px;
+  margin-top: 0px;
+}
+#second .key{
+  color:green;
+} 
+
+#second .number{
+  color:rgb(141, 6, 17);
+}
+.array::before,.object::before{
+  /* content: '\25B8'; */
+  cursor: pointer;
 }
 .marT5{
   margin-top: 5px;

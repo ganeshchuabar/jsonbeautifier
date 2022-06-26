@@ -1,6 +1,7 @@
 var at, // current index of JSON text
     ch; // character at current index
 var jsonObject;
+var json_html='';
 var next = function() {
   // increments at
   // updates ch

@@ -45,8 +45,11 @@ function dragElement(element, direction)
 function beautify(){
     document.getElementById("second").innerHTML = "";
     var json = parseJSON(document.getElementById("plaintext").value);
-    var str = JSON.stringify(json,undefined,2);
-    document.getElementById("second").innerHTML = "<pre>"+str+"</str>";
+    //var str = JSON.stringify(json,undefined,2);
+    //document.getElementById("second").innerHTML = "<pre>"+str+"</str>";
+    htmlJson='';
+    createList(jsonObject);
+    $("#second").html(htmlJson);
 };
 function clear(pane){
     if( pane == "textarea"){
@@ -56,10 +59,14 @@ function clear(pane){
     }
 };
 function format(){
-    $("#second").html("");
+    //$("#second").html("");
     //var json = parseJSON($("#plaintext").val());
-    var str = JSON.stringify(jsonObject,undefined,2);
-    $("#second").html("<pre>"+str+"</str>");
+    //var str = JSON.stringify(jsonObject,undefined,2);
+    //$("#second").html("<pre>"+str+"</str>");
+    htmlJson='';
+    createList(jsonObject);
+    $("#second").html(htmlJson);
+
 };
 function unformat(){
     $("#second").html("");
