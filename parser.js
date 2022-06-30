@@ -11,7 +11,8 @@ var next = function() {
 };
 
 var error = function(message) { // throw error for bad syntax
-  console.log(message);
+  errorMsg = "";
+  $("#second").html(message +"- at index["+at+"]")
   throw undefined;
 };
 
@@ -120,12 +121,12 @@ var value = function () {
       }
       getDigits(); // exponent
     }
-  
-    if(!isNaN(Number(number))) { // check if string can be converted to number
+    return number;
+    /*if(!isNaN(Number(number))) { // check if string can be converted to number
       return Number(number);
     } else { // string could not be converted to number
       error('bad number');
-    }
+    }*/
   };
 
   var escapes = { // helper variable

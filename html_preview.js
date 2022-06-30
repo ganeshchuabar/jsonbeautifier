@@ -54,8 +54,12 @@ const key = (key) => {
     htmlJson += "<span class='key'>\""+key+ "\"</span>:";
 };
 const val = (value) => {
-    if( $.type(value) === 'string'){
-        htmlJson += "<span class='value'>\""+value+ "\"</span>";
+    if( isNaN( value) || value === ''){
+        
+        value = value.replaceAll('"','\\"');
+        value = value.replaceAll('\n','\\\n');
+        htmlJson += "<span class='value'>\""+value + "\"</span>";
+
     }else{
         htmlJson += "<span class='number'>"+value+ "</span>";
     }
