@@ -29,7 +29,6 @@
         <button class="button-14 marT10 floR marR3" onclick="window.unformat('textarea')">Un-Format</button>
         <button class="button-14 marT10 floR marR3" onclick="window.copy('formatpane')"> Copy</button>
     </div>
-        
 </div>
     
 </div>
@@ -47,6 +46,37 @@
 </div>
 <script type="text/javascript">
     dragElement( document.getElementById("separator"), "H" );
+    $("body").on("click",'.array',function(event){
+        event.stopPropagation()
+        var target = event.target;
+        var ul = undefined;
+        if($(target).is(".open")){
+            $(target).removeClass("open").addClass("close");
+            $(target).children("ol").hide()
+            var length = $($(target).children("ol")[0]).children().length;
+            $(target).find("span").last().html(length+"]");
+            
+        }else if($(target).is(".close")){
+            $(target).removeClass("close").addClass("open");
+            $(target).children("ol").show()
+            $(target).find("span").last().html("]");
+        }
+    });
+    $("body").on("click",'.object',function(event){
+        event.stopPropagation()
+        var target = event.target;
+        var ul = undefined;
+        if($(target).is(".open")){
+            $(target).removeClass("open").addClass("close");
+            $(target).children("ul").hide()
+            var length = $($(target).children("ul")[0]).children().length;
+            $(target).find("span").last().html(length+"}");
+        }else if($(target).is(".close")){
+            $(target).removeClass("close").addClass("open");
+            $(target).children("ul").show();
+            $(target).find("span").last().html("}");
+        }
+    });
 </script>
 </body>
 </html> 

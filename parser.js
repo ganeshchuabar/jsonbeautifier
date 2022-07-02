@@ -232,17 +232,11 @@ var value = function () {
   }
 
   function parseJSON(jsonText) {
-
     
-    console.log(jsonText.trim());
     json = jsonText.trim();
-    /*
-    insert code for:
-    at, ch, next, error, value, nully, bool, number, escapes, string, array, object
-    */
-  
     at = 0;
     ch = json.charAt(at);
     jsonObject = value();
     return jsonObject;
+    
   }

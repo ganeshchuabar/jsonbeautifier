@@ -42,6 +42,7 @@ html, body {
     height: 100%;
     min-width: 10px;
     overflow: auto;
+    padding-left:10px;
 }
 #first textarea{
     height: 98%;
@@ -109,11 +110,15 @@ html, body {
   outline: 0;
 }
 
-#second li,ul,ol{
+#second ul,ol{
   list-style: none;
-  padding-left: 10px;
+  padding-left: 30px;
   margin-bottom:0px;
   margin-top: 0px;
+  border-left: 1px solid #e0dede;
+}
+#second li{
+  list-style: none;
 }
 #second .key,.array .value{
   color:green;
@@ -122,9 +127,17 @@ html, body {
 #second .number{
   color:rgb(141, 6, 17);
 }
-.array::before,.object::before{
-  /* content: '\25B8'; */
+.open::before{
+  content: '▾';
   cursor: pointer;
+  font-size: 14px;
+  margin-right:5px;
+}
+.close::before{
+  content: '▸';
+  cursor: pointer;
+  font-size: 14px;
+  margin-right:5px;
 }
 span.value,.number{
   margin-left: 5px;

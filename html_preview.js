@@ -6,7 +6,7 @@ const createList = (items) => {
         getItems(items);
         break;
       case "array":
-        htmlJson += '<span class="array">';
+        htmlJson += '<span class="array open">';
         openArray();
         
 
@@ -33,7 +33,7 @@ const createList = (items) => {
 
   // get items in the object
 const getItems = (items) => {
-    htmlJson += '<span class="object"><span class=\'object_o\'>{</span>';
+    htmlJson += '<span class="object open"><span class=\'object_o\'>{</span>';
     openul();
     var index = 0;
     for (const item in items) {
@@ -58,6 +58,8 @@ const val = (value) => {
         
         value = value.replaceAll('"','\\"');
         value = value.replaceAll('\n','\\\n');
+        value = value.replaceAll('<','&lt;');
+        value = value.replaceAll('>','&gt;');
         htmlJson += "<span class='value'>\""+value + "\"</span>";
 
     }else{
