@@ -35,8 +35,6 @@
         <button class="button-14 marT10 marL3" id="cleart" onclick='window.clear("textarea")'> Clear</button>
         <button class="button-14 marT10 floR marR3" onclick="window.clear('formatpane')"> Clear</button>
         <button class="button-14 marT10 floR marR3" onclick="window.format('textarea')">Format</button>
-        <button class="button-14 marT10 floR marR3" onclick="window.unformat('textarea')">Un-Format</button>
-        <button class="button-14 marT10 floR marR3" onclick="window.copy('formatpane')"> Copy text</button>
     </div>
 </div>
     
@@ -50,8 +48,12 @@
 
     </div>
 </div>
-<div id="footer" style="display:none;">
-    <button class="button-14" onclick="beautify()"> Beautify</button>
+<div id="footer">
+	<ul>
+    		<li><a href="privacy.html" target="_blank">Privacy</a></li>
+    		<li><a href="#contact">Contact</a></li>
+    		<li><a href="#about">About</a></li>
+  	</ul>
 </div>
 <script type="text/javascript">
     dragElement( document.getElementById("separator"), "H" );

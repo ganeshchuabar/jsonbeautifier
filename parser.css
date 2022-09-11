@@ -163,3 +163,27 @@ span.value,.number{
 .marR3{
   margin-right: 3px;
 }
+
+
+#footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+  right: 5%;
+  position: relative;
+  top: 30%;
+}
+
+#footer li {
+  float: left;
+}
+
+#footer li a {
+  display: block;
+  color: gray;
+  text-align: center;
+  padding-left:12px;
+  text-decoration: none;
+}
